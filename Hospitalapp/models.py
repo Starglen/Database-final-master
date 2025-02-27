@@ -22,3 +22,22 @@ class Doctor(models.Model):
 
     def __str__(self):
         return self.name
+
+class staff(models.Model):
+    firstname = models.CharField(max_length=50)
+    lastname = models.CharField(max_length=50)
+    position = models.CharField(max_length=50)
+    phonenumber = models.CharField(max_length=15)
+    email = models.EmailField()
+    hiredate = models.DateField()
+
+    def __str__(self):
+        return self.firstname +" "+ self.lastname
+
+class ward(models.Model):
+    name = models.CharField(max_length=50)
+    totalbeds = models.IntegerField()
+    availablebeds = models.IntegerField()
+
+    def __str__(self):
+        return self.name
